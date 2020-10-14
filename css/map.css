@@ -1,0 +1,109 @@
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.map {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+.my-location {
+    width: 35px;
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-content: center;
+    z-index: 10;
+    top: 200px;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: blanchedalmond;
+    width: 250px;
+    align-items: center;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    width: 60px;
+    margin: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.saved-positions {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+    padding-top: 0;
+    max-height: 500px;
+}
+
+.saved-positions h3 {
+    margin: 0;
+    padding: 20px 0px;
+    background-color: #d1b9fda4;
+    width: 100%;
+
+}
+
+.positions {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+}
+
+.position {
+    background-color: #d1b9fd71;
+    width: 100%;
+    padding: 10px 0;
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+.position:hover {
+    background-color: #b3a1d87a;
+}
+
+.position span {
+    margin-left: 5px;
+}
+
+.del-btn {
+    width: 15px;
+    padding:0;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 750px) {
+    main {
+        flex-direction: column;
+    }
+    .map {
+        width: 300px;
+        height: 300px;
+    }
+}

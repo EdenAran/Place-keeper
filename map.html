@@ -5,10 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/map.css">
 </head>
 
 <body>
-    <h1>Map</h1>
+    <header>
+        <h1>Map</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <main>
+        <div class="modal-container">
+            <div class="modal hide">
+                <label>Enter a name for the location: <input type="text" name="title"></label>
+                <button class="close-btn" onclick="onCloseModal()">close</button>
+            </div>
+        </div>
+        <div class="map">
+        </div>
+        <section class="saved-positions">
+            <h3>Saved Locations</h3>
+            <div class="positions">
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="js/service/placeService.js"></script>
+    <script src="js/mapController.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUZgbGEP11oNtkqb8bq06aDmUf4w9ksE&callback=initMap"></script>
 </body>
 
 </html>
