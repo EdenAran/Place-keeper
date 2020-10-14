@@ -1,0 +1,24 @@
+#userStyle{
+    /* display: flex; */
+    padding: 10px;
+}
+
+.select{
+    padding: 10px;
+}
+
+body{
+    background-color: rgb(200, 255, 248);
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 400px;
+}
+
+.options > div{
+    display: flex;
+    justify-content: center;
+}

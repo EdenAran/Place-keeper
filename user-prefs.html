@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/preferences.css">
+</head>
+
+<body onload="onInit()">
+    <header>
+        <h1>Preferences</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <form id="userStyle" onsubmit="onSubmit(event)">
+        <div class="options">
+            <div class="color-select">
+                <label>
+                    Choose your background color
+                    <input type="color" name="bg-color" onchange="onColorChange(this.value)"></label>
+            </div>
+            <div class="select date">
+                <label>
+                    Choose your birthday
+                    <input type="date" name="date" onchange="onDateChange(this.value)">
+                </label>
+            </div>
+            <div class="select time">
+                <label>
+                    Chose the time you were born
+                    <input type="time" name="time" onchange="onTimeChange(this.value)">
+                </label>
+            </div>
+            <div class="select age">
+                <label>
+                    What is your age?
+                    <input type="range" name="age" min="18" max="120" value="60" onchange="onAgeChange(this.value)">
+                </label>
+                <span>60</span>
+            </div>
+            <div class="select email">
+                <label>
+                    Enter your email
+                    <input type="email" name="email" onchange="onEmailChange(this.value)" required
+                        placeholder="example@example.com">
+                </label>
+            </div>
+        </div>
+        <button class="btn" type="submit">Submit</button>
+    </form>
+
+
+    <script src="js/service/storageService.js"></script>
+    <script src="js/service/userPrefService.js"></script>
+    <script src="js/userPrefController.js"></script>
+</body>
+
+</html>

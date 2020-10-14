@@ -1,0 +1,51 @@
+* {
+    box-sizing: content-box;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(246, 206, 250);
+}
+
+header {
+    background-color: rgba(255, 228, 196, 0.274);
+    opacity: 0.8;
+    padding: 10px;
+    margin: auto;
+}
+
+nav {
+    background-color: rgba(251, 255, 196, 0.356);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+a {
+    background-color: rgba(240, 255, 255, 0.747);
+    padding: 5px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: azure;
+}
+
+a:active {
+    transform: scale(0.99);
+}
+
+section {
+    padding-top: 1px;
+    width: 400px;
+    margin: 5px auto;
+    background-color: rgba(196, 246, 255, 0.315);
+    height: 500px;
+}
+
+.btn {
+    margin:auto;
+    max-width: 50px;
+}
