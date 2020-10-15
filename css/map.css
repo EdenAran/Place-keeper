@@ -90,6 +90,7 @@ main {
 
 .position span {
     margin-left: 5px;
+    width:100%;
 }
 
 .del-btn {

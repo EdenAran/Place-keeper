@@ -30,7 +30,7 @@ function onMapClick({ latLng }) {
     setCurrPosition(latLng);
 }
 
-function onCloseModal() {
+function onSaveModal() {
     const position = getPosition();
     const elInput = document.querySelector('[name=title]')
     const title = elInput.value;
@@ -38,6 +38,12 @@ function onCloseModal() {
     addMarker(position.lat(), position.lng(), title);
     closeModal();
     elInput.value = '';
+}
+
+function onCloseModal(){
+    const elInput = document.querySelector('[name=title]')
+    elInput.value = '';
+    closeModal();
 }
 
 function openModal() {
@@ -49,18 +55,22 @@ function closeModal() {
 }
 
 function renderSavedLocations() {
-
     var strHTML = gMarkers.map(marker => {
         if (marker.title === 'My Location') return;
         return `
                 <div class="position">
-                <span>${marker.title}</span>
+                <span  onclick="onLocationClick(${marker.id})">${marker.title}</span>
                 <button class="del-btn" onclick="onDeleteLocation(${marker.id})">x</button>
                 </div>
                 `}).join('');
     document.querySelector('.positions').innerHTML = strHTML;
 }
 
-function onDeleteLocation(id){
+function onDeleteLocation(id) {
     deleteMarker(id);
+}
+
+function onLocationClick(id) {
+    const marker = getMarkerById(id);
+    centerLocation(marker);
 }

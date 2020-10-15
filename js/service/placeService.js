@@ -45,7 +45,8 @@ function getMarkers() {
 }
 
 function getMarkerById(id) {
-    return gMarkers.filter(marker => marker.id === id)
+    var marker = gMarkers.filter(marker => marker.id === id)
+    return marker;
 }
 
 function getMarkerByTitle(title) {
@@ -53,7 +54,13 @@ function getMarkerByTitle(title) {
 }
 
 function deleteMarker(id){
+    const idx = gMarkers.findIndex(marker => marker.id === id);
     var marker = getMarkerById(id);
-    console.log(marker)
-    // marker.setMap(null)
+    gMarkers.splice(idx,1);
+    marker[0].setMap(null)
+    renderSavedLocations();
+}
+
+function centerLocation(marker){
+    gMap.setCenter(new google.maps.LatLng(marker[0].position.lat(), marker[0].position.lng()))
 }
