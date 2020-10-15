@@ -45,22 +45,23 @@ function getMarkers() {
 }
 
 function getMarkerById(id) {
-    var marker = gMarkers.filter(marker => marker.id === id)
+    var marker = gMarkers.find(marker => marker.id === id)
+    console.log(marker)
     return marker;
 }
 
 function getMarkerByTitle(title) {
-    return gMarkers.filter(marker => marker.title === title)
+    return gMarkers.find(marker => marker.title === title)
 }
 
 function deleteMarker(id){
     const idx = gMarkers.findIndex(marker => marker.id === id);
     var marker = getMarkerById(id);
     gMarkers.splice(idx,1);
-    marker[0].setMap(null)
+    marker.setMap(null)
     renderSavedLocations();
 }
 
 function centerLocation(marker){
-    gMap.setCenter(new google.maps.LatLng(marker[0].position.lat(), marker[0].position.lng()))
+    gMap.setCenter(new google.maps.LatLng(marker.position.lat(), marker.position.lng()))
 }
